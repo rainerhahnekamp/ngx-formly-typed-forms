@@ -32,6 +32,8 @@ export class AppComponent {
     city: 'Vienna',
   };
 
+  formAddress: Address | undefined;
+
   fields: FormlyFieldConfig[] = [
     { key: 'id', type: 'input' },
     { key: 'street', type: 'input' },
@@ -41,6 +43,6 @@ export class AppComponent {
   ];
 
   handleSubmit() {
-    console.log(this.form.getRawValue());
+    this.formAddress = this.form.getRawValue();
   }
 }
